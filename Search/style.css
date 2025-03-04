@@ -8,7 +8,6 @@ body {
   
   
   
-  /* Center the entire content */
   .container {
     width: 80%;
     max-width: 800px;
@@ -20,7 +19,7 @@ body {
     text-align: center; /* Centers text inside container */
   }
   
-  /* Header */
+  
   header {
     background: #3C6E71;
     color: white;
@@ -106,11 +105,15 @@ body {
   
   footer {
     text-align: center;
-    width: 50%;
-    padding: 10px 0; 
-    font-size: 14px; 
+    width: 100%;
+    padding: 15px 0;
+    font-size: 14px;
     background: #3C6E71;
-  }
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
   
   
   /* Responsive Design */
@@ -129,25 +132,26 @@ body {
         margin: 10px 0;
     }
     #search-bar {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border: 2px solid #3C6E71;
-        border-radius: 5px;
-        font-size: 16px;
-        outline: none;
-      }
-      
-      #search-bar:focus {
-        border-color: #2a4d4e;
-        box-shadow: 0 0 5px rgba(60, 110, 113, 0.5);
-      }
-      
-      #courses-container p {
-        background: #f4f4f4;
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 5px;
-      }
-      
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 2px solid #3C6E71;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+      text-align: center; /* Center text in search bar */
   }
+  
+  #search-bar:focus {
+      border-color: #2a4d4e;
+      box-shadow: 0 0 5px rgba(60, 110, 113, 0.5);
+  }
+  
+  #courses-container p {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      text-align: center;
+  }
+}

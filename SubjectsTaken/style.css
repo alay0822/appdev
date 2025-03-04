@@ -6,8 +6,18 @@ body {
   margin: 0;
 }
 
+
+
+/* Center the entire content */
 .container {
-  flex: 1;
+  width: 80%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centers text inside container */
 }
 
 /* Header */
@@ -118,5 +128,4 @@ footer {
       display: block;
       margin: 10px 0;
   }
-  
 }

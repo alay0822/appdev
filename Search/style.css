@@ -101,16 +101,11 @@ body {
     padding: 8px 12px;
     border-radius: 5px;
     font-size: 14px;
-  }
   
-  .footer-container {
-    max-width: 900px; /* Adjust width to match header */
-    margin: 0 auto; /* Centers the footer */
-    text-align: center;
 }
 
 footer {
-    background: #3C6E71;
+    
     color: white;
     padding: 15px 0;
     width: 100%;

@@ -1,7 +1,9 @@
 /* Reset & General Styles */
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
 
@@ -103,13 +105,9 @@ section {
 }
 
 footer {
-  text-align: center;
-  padding: 10px;
-  background: #3C6E71;
-  color: white;
-  margin-top: 20px;
-  border-radius: 0 0 10px 10px;
+  margin-top: auto;
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

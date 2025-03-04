@@ -1,4 +1,4 @@
-fetch("https://alay0822.github.io/CV_html5/HTML/CSS/SubjectsTaken/courses.json")
+fetch('https://alay0822.github.io/appdev/SubjectsTaken/courses.json')
   .then(response => {
     if (!response.ok) {
       throw new Error('Network response was not ok');

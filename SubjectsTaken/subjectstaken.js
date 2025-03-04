@@ -1,4 +1,4 @@
-fetch('SubjectsTaken/courses.json')
+fetch('courses.json')
   .then(response => response.json())
   .then(data => {
     let container = document.getElementById("courses-container");

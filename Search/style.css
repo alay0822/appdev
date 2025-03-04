@@ -105,15 +105,13 @@ body {
 }
 
 footer {
-  
-    color: #3C6E71;
-    padding: 15px 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Adjust the height as needed */
+  background: #424242;
 
-  
+}
   /* Responsive Design */
   @media (max-width: 768px) {
     .container {

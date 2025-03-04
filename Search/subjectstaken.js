@@ -1,34 +1,34 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const coursesContainer = document.getElementById("courses-container");
+    const searchBar = document.getElementById("search-bar");
+
     fetch("courses.json")
         .then(response => response.json())
         .then(data => {
-            const coursesContainer = document.getElementById("courses-container");
-            const searchBar = document.createElement("input");
-            
-            // Set up search bar
-            searchBar.setAttribute("type", "text");
-            searchBar.setAttribute("id", "search-bar");
-            searchBar.setAttribute("placeholder", "Search subjects...");
-            coursesContainer.before(searchBar);
+            let courses = data.courses;
+            displayCourses(courses);
 
-            function displayCourses(filterText = "") {
-                coursesContainer.innerHTML = ""; // Clear previous results
-                data.courses.forEach(course => {
-                    if (course.description.toLowerCase().includes(filterText.toLowerCase())) {
-                        const p = document.createElement("p");
-                        p.textContent = `${course.year_level}, ${course.sem} - ${course.code}: ${course.description} (${course.credit} Credits)`;
-                        coursesContainer.appendChild(p);
-                    }
-                });
-            }
-
-            // Initial display of courses
-            displayCourses();
-
-            // Listen for input changes
-            searchBar.addEventListener("input", (e) => {
-                displayCourses(e.target.value);
+            searchBar.addEventListener("input", function () {
+                let searchTerm = searchBar.value.toLowerCase().trim();
+                let filteredCourses = courses.filter(course =>
+                    course.description.toLowerCase().includes(searchTerm) ||
+                    course.code.toLowerCase().includes(searchTerm)
+                );
+                displayCourses(filteredCourses);
             });
-        })
-        .catch(error => console.error("Error loading courses:", error));
+        });
+
+    function displayCourses(courses) {
+        coursesContainer.innerHTML = ""; // Clear previous results
+        if (courses.length === 0) {
+            coursesContainer.innerHTML = "<p>No courses found.</p>";
+            return;
+        }
+
+        courses.forEach(course => {
+            let courseElement = document.createElement("p");
+            courseElement.textContent = `${course.year_level} Year, ${course.sem} Sem - ${course.code}: ${course.description} (${course.credit} credits)`;
+            coursesContainer.appendChild(courseElement);
+        });
+    }
 });

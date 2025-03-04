@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("SubjectsTaken/courses.json")
+  fetch("courses.json")
 
 
       .then(response => {

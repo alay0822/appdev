@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () { 
     let container = document.getElementById("courses-container");
+  
     if (!container) {
-        console.error("Error: courses-container not found in HTML.");
+        console.error("Error: #courses-container not found!");
         return;
     }
   
-    fetch("courses.json")
+    fetch("courses.json") // Ensure this file exists and is accessible
         .then(response => {
             if (!response.ok) {
                 throw new Error("Network response was not ok");

@@ -1,10 +1,9 @@
 /* Reset & General Styles */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-  }
+html, body {
+  min-height: 100vh; /* Ensure full page height */
+  display: flex;
+  flex-direction: column;
+}
   
   
   
@@ -105,13 +104,20 @@ body {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
+  background: #3C6E71;  /* Match header color */
+  color: white;
+  padding: 15px 0;
+  text-align: center;
   width: 100%;
-  height: 60px; /* Adjust the height as needed */
-  background: #424242;
-
+  position: relative;
+  bottom: 0;
 }
+
+.footer-container {
+  max-width: 900px; /* Match header width */
+  margin: 0 auto; /* Center align */
+}
+
   /* Responsive Design */
   @media (max-width: 768px) {
     .container {

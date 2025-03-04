@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("./courses.json")
+  fetch("SubjectsTaken/courses.json")
+
 
       .then(response => {
           if (!response.ok) {

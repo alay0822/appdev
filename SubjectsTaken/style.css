@@ -108,15 +108,18 @@ section {
   font-size: 14px;
 }
 
-/* Footer */
 footer {
+  width: 100%;
   text-align: center;
   padding: 10px;
   background: #3C6E71;
   color: white;
-  margin-top: 20px;
-  border-radius: 0 0 10px 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

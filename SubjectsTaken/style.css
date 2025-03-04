@@ -6,16 +6,22 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height */
 }
 
-/* Container */
+/* Center the entire content */
 .container {
+  width: 80%;
   max-width: 800px;
-  margin: 20px auto;
+  margin: auto;
   padding: 20px;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centers text inside container */
 }
 
 /* Header */
@@ -31,13 +37,14 @@ header h1 {
   margin: 0;
 }
 
+/* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
 }
 
 nav ul li {
-  display: inline;
+  display: inline-block;
   margin: 0 15px;
 }
 
@@ -77,13 +84,10 @@ nav ul li a:hover {
 section {
   background: white;
   padding: 20px;
-  margin: 20px 0;
+  margin: 20px auto;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-  color: #3C6E71;
+  text-align: center;
 }
 
 /* Skills List */
@@ -91,6 +95,7 @@ h2 {
   list-style-type: none;
   padding: 0;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
 }

@@ -8,8 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
             let courses = data.courses;
             displayCourses(courses);
 
+            // ✅ Fix: Ensure search works dynamically
             searchBar.addEventListener("input", function () {
-                let searchTerm = searchBar.value.toLowerCase().trim();
+                let searchTerm = searchBar.value.toLowerCase();
                 let filteredCourses = courses.filter(course =>
                     course.description.toLowerCase().includes(searchTerm) ||
                     course.code.toLowerCase().includes(searchTerm)
@@ -21,10 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayCourses(courses) {
         coursesContainer.innerHTML = ""; // Clear previous results
         if (courses.length === 0) {
-            coursesContainer.innerHTML = "<p>No courses found.</p>";
+            coursesContainer.innerHTML = "<p>No results found</p>";
             return;
         }
-
         courses.forEach(course => {
             let courseElement = document.createElement("p");
             courseElement.textContent = `${course.year_level} Year, ${course.sem} Sem - ${course.code}: ${course.description} (${course.credit} credits)`;

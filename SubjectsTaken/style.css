@@ -107,7 +107,8 @@ section {
 footer {
   text-align: center;
   width: 100%;
-  background: #3C6E71;
+  padding: 10px 0; 
+  font-size: 14px; 
 }
 
 

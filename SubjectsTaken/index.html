@@ -1,47 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Online CV</title>
+  
+  
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>My Online CV</h1>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </header>
 
-  <div class="image">
-    <img src="src/myself.jpg" width="200" height="200"/>
-    <h1 id="main-heading">Alyza Shane C. Lumay</h1>
+  <!-- Container to center the content -->
+  <div class="container mt-4">
+    
+    <header class="text-center">
+      <h1>My Online CV</h1>
+      <nav>
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <section id="about">
+    <!-- Profile Image Section -->
+    <div class="text-center">
+      <img src="src/myself.jpg" class="rounded-circle mt-3" width="200" height="200" alt="Profile Photo">
+      <h2 class="mt-3">Alyza Shane C. Lumay</h2>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="p-4 bg-light rounded shadow mt-4">
       <h2>About Me</h2>
-      <p>I’m a nice fun and friendly person, I’m honest and punctual, I work well in a team but also on my own as I like to set myself goals which I will achieve, I have good listening and communication skills. I have a creative mind and am always up for new challenges. I am well organized and always plan ahead to make sure I manage my time well.</p>
+      <p>I’m a nice, fun, and friendly person. I’m honest and punctual, I work well in a team but also on my own 
+      as I like to set myself goals which I will achieve. I have good listening and communication skills. I have a creative 
+      mind and am always up for new challenges.</p>
     </section>
 
-    <section id="education">
+    <!-- Education Section -->
+    <section id="education" class="p-4 bg-white rounded shadow mt-4">
       <h2>Education</h2>
-      <p>2022-2026</p>
-      <p>University of Science and Technology of Southern Philippines.</p>
-      <p>2021-2022</p>
-      <p>Christian Samaritan School Divisoria Branch.</p>
+      <p><strong>2022-2026</strong> - University of Science and Technology of Southern Philippines.</p>
+      <p><strong>2021-2022</strong> - Christian Samaritan School Divisoria Branch.</p>
     </section>
 
-    <!-- Updated Courses Section -->
-    <section id="courses">
+    <!-- Courses Section (Data will be loaded dynamically) -->
+    <section id="courses" class="p-4 bg-light rounded shadow mt-4">
       <h2>Courses</h2>
       <div id="courses-container">
-        <!-- Courses will be dynamically loaded here by JavaScript -->
+        <!-- Courses will be dynamically loaded by JavaScript -->
       </div>
     </section>
 
-    <section id="skills">
+    <!-- Skills Section -->
+    <section id="skills" class="p-4 bg-white rounded shadow mt-4">
       <h2>Skills</h2>
       <ul>
         <li>Time Management</li>
@@ -51,23 +66,28 @@
       </ul>
     </section>
 
-    <section id="portfolio">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="p-4 bg-light rounded shadow mt-4">
       <h2>Portfolio</h2>
-      <p> A collaborative and creative UI designer with a passion for crafting intuitive and visually appealing user experiences. Driven by a desire to continuously learn and grow, I am pursuing a Professional Certificate to enhance my skills and knowledge. I possess a strong work ethic and am committed to delivering high-quality designs that meet user needs and business objectives.</p>
+      <p>A collaborative and creative UI designer with a passion for crafting intuitive and visually appealing user experiences. Driven by a desire to continuously learn and grow, I am pursuing a Professional Certificate to enhance my skills and knowledge.</p>
     </section>
 
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="p-4 bg-white rounded shadow mt-4">
       <h2>Contact</h2>
-      <p>+63 930 241 6804</p>
-      <p>lumayshane1704@gmail.com</p>
+      <p>📞 +63 930 241 6804</p>
+      <p>✉️ lumayshane1704@gmail.com</p>
     </section>
-  </div>
 
-  <footer>
-    <p>&copy; 2025 Alyza Shane C. Lumay Curriculum Vitae</p>
-  </footer>
+    <!-- Footer -->
+    <footer class="text-center mt-5 p-3">
+      <p>&copy; 2025 Alyza Shane C. Lumay - Curriculum Vitae</p>
+    </footer>
+
+  </div> <!-- End of container -->
 
   <!-- JavaScript to load the courses from JSON -->
   <script src="subjectstaken.js"></script>
+
 </body>
 </html>

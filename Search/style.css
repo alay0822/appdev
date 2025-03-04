@@ -103,21 +103,21 @@ body {
     font-size: 14px;
   }
   
-  footer {
-    display: flex;
-    justify-content: center; /* Centers content horizontally */
-    align-items: center; /* Centers content vertically */
+  .footer-container {
+    max-width: 900px; /* Adjust width to match header */
+    margin: 0 auto; /* Centers the footer */
     text-align: center;
-    width: 100%;
-    padding: 15px 0;
-    font-size: 14px;
+}
+
+footer {
     background: #3C6E71;
     color: white;
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    padding: 15px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
-  
+
   
   /* Responsive Design */
   @media (max-width: 768px) {

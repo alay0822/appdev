@@ -1,25 +1,12 @@
-fetch('https://alay0822.github.io/appdev/SubjectsTaken/courses.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.json();
-  })
+fetch('SubjectsTaken/courses.json')
+  .then(response => response.json())
   .then(data => {
-    const coursesList = document.getElementById('courses-list');
-    
+    let container = document.getElementById("courses-container");
+
     data.courses.forEach(course => {
-      const courseItem = document.createElement('div');
-      courseItem.classList.add('course-item');
-      courseItem.innerHTML = `
-        <h3>${course.code} - ${course.description}</h3>
-        <p><strong>Year Level:</strong> ${course.year_level}</p>
-        <p><strong>Semester:</strong> ${course.sem}</p>
-        <p><strong>Credits:</strong> ${course.credit}</p>
-      `;
-      coursesList.appendChild(courseItem);
+      let courseElement = document.createElement("p");
+      courseElement.textContent = `${course.year_level} Year, ${course.sem} Sem - ${course.code}: ${course.description} (${course.credit} Credits)`;
+      container.appendChild(courseElement);
     });
   })
-  .catch(error => {
-    console.error('Error fetching the courses data:', error);
-  });
+  .catch(error => console.error('Error loading JSON:', error));

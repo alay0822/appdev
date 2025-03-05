@@ -1,13 +1,4 @@
-/* Main Container */
-.main-container {
-  width: 90%;
-  max-width: 900px; /* Keeps content compact */
-  margin: auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+
 
 /* Header Centering */
 .header-container {

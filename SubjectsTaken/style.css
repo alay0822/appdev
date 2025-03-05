@@ -9,7 +9,23 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Profile Container */
+/* Header Centering */
+.header-container {
+  text-align: center;
+}
+
+/* Center Navigation */
+.header-container nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.header-container nav ul li {
+  display: inline;
+  margin-right: 15px;
+}
+
+/* Profile Section */
 .profile-container {
   display: flex;
   flex-direction: column;
@@ -21,12 +37,13 @@
 
 /* Profile Image */
 .profile-img {
-  width: 120px;  /* Adjust the size */
-  height: 120px; /* Makes it square */
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #3C6E71;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
 }
 
 /* Content Sections */

@@ -105,11 +105,11 @@ section {
 }
 
 footer {
-  text-align: center;
-  width: 100%;
-  padding: 10px 0; 
-  font-size: 14px; 
   background: #3C6E71;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
 }
 
 

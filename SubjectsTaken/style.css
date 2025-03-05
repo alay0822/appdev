@@ -38,33 +38,49 @@ header h1 {
   text-align: left;
 }
 
+/* Semester Section */
 .semester {
   margin: 20px 0;
-  padding: 10px;
-  border-bottom: 3px solid #3C6E71; /* Adds a line between semesters */
+  padding-bottom: 15px;
+  border-bottom: 2px dashed #3C6E71; /* Softer separation */
 }
 
-.semester:last-child {
-  border-bottom: none;
+.semester h2 {
+  font-size: 18px;
+  color: #3C6E71;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #3C6E71;
 }
 
+/* Course Item */
 .course {
   display: flex;
   justify-content: space-between;
-  background: #f9f9f9;
+  background: #ffffff;
   padding: 10px;
   border-radius: 5px;
   margin: 5px 0;
+  border: 1px solid #ddd; /* Light border for subtle separation */
 }
 
 .course:nth-child(odd) {
-  background: #e6f7f8;
+  background: #f0f7f8; /* Soft alternate background */
+}
+
+.course span {
+  font-size: 14px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
-      width: 90%;
-      padding: 15px;
+    width: 90%;
+    padding: 15px;
+  }
+
+  .course {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

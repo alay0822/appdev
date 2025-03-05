@@ -1,5 +1,5 @@
 /* General Styling */
-body { 
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -33,24 +33,38 @@ header h1 {
   margin: 0;
 }
 
-/* Course List */
+/* Course List Section */
 .course-container {
   text-align: left;
 }
 
-/* Semester Section */
-.semester {
-  margin: 20px 0;
-  padding-bottom: 15px;
-  border-bottom: 2px dashed #3C6E71; /* Softer separation */
+/* Year Level Section */
+.year-level {
+  margin: 30px 0;
+  padding: 15px 10px;
+  border: 2px solid #3C6E71;
+  border-radius: 8px;
 }
 
-.semester h2 {
+.year-level h2 {
+  color: #3C6E71;
+  font-size: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px dashed #3C6E71;
+  padding-bottom: 5px;
+}
+
+/* Semester Section */
+.semester {
+  margin: 15px 0;
+  padding: 10px;
+  border-bottom: 1px solid #3C6E71; /* Subtle line between semesters */
+}
+
+.semester h3 {
   font-size: 18px;
   color: #3C6E71;
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid #3C6E71;
+  margin-bottom: 5px;
 }
 
 /* Course Item */
@@ -61,11 +75,11 @@ header h1 {
   padding: 10px;
   border-radius: 5px;
   margin: 5px 0;
-  border: 1px solid #ddd; /* Light border for subtle separation */
+  border: 1px solid #ddd;
 }
 
 .course:nth-child(odd) {
-  background: #f0f7f8; /* Soft alternate background */
+  background: #f9f9f9;
 }
 
 .course span {

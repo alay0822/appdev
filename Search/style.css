@@ -109,10 +109,7 @@ footer {
   padding: 20px;
   text-align: center;
   border-radius: 10px 10px 0 0;
-}
-.footer-container {
-  max-width: 900px; /* Match header width */
-  margin: 0 auto; /* Center align */
+
 }
 
   /* Responsive Design */

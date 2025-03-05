@@ -1,51 +1,31 @@
-/* General Styles */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 20px;
-  color: #3C6E71;
 }
 
-/* Grid Container */
-.grid-container {
+#grid-container {
   display: grid;
-  grid-template-columns: 1fr; /* One column layout */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
   gap: 20px;
-  max-width: 800px;
-  margin: auto;
+  padding: 20px;
 }
 
-/* Year Level */
-.year-level {
+.course-card {
   background: #3C6E71;
   color: white;
   padding: 15px;
   border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.year-level h2 {
-  margin: 0 0 10px 0;
-  font-size: 20px;
-  text-align: center;
-  border-bottom: 2px solid #f4f4f4;
-  padding-bottom: 5px;
+.course-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
 }
 
-/* Courses */
-.course {
-  background: #ffffff;
-  color: #3C6E71;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+.course-card p {
   margin: 5px 0;
   font-size: 14px;
-}
-
-/* Responsive Grid for Larger Screens */
-@media (min-width: 600px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Two-column layout */
-  }
 }

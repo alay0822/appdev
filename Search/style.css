@@ -35,7 +35,7 @@ header h1 {
   margin: 0;
 }
 
-/* Navigation */
+
 nav ul {
   list-style: none;
   padding: 0;
@@ -57,7 +57,7 @@ nav ul li a:hover {
   border-radius: 5px;
 }
 
-/* Profile Section */
+
 .profile {
   padding: 20px;
 }
@@ -75,7 +75,7 @@ nav ul li a:hover {
   color: #3C6E71;
 }
 
-/* Sections */
+
 section {
   background: white;
   padding: 20px;
@@ -101,7 +101,7 @@ section {
   font-size: 14px;
 }
 
-/* Footer */
+
 footer {
   background: #3C6E71;
   color: white;
@@ -110,7 +110,7 @@ footer {
   border-radius: 10px 10px 0 0;
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 768px) {
   .container {
     width: 90%;

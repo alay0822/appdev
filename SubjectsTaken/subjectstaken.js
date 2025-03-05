@@ -1,4 +1,4 @@
-import subjects from './subjectstaken.js';
+import courses from 'courses.json';
 
 document.addEventListener("DOMContentLoaded", () => {
     const coursesContainer = document.getElementById("courses-container");

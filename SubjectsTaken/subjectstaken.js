@@ -1,26 +1,32 @@
-document.addEventListener("DOMContentLoaded", function () { 
-    let container = document.getElementById("courses-container");
-
-    if (!container) {
-        console.error("Error: #courses-container not found!");
-        return;
+async function fetchAndDisplayCourses() {
+    try {
+      // Fetch the JSON data
+      const response = await fetch("courses.json");
+      const data = await response.json();
+  
+      // Get the container element
+      const gridContainer = document.getElementById("courses-grid");
+  
+      // Create course cards
+      data.courses.forEach(course => {
+        const courseCard = document.createElement("div");
+        courseCard.classList.add("course-card");
+  
+        // Populate course details
+        courseCard.innerHTML = `
+          <h3>${course.year_level}, ${course.sem} - ${course.code}</h3>
+          <p>${course.description}</p>
+          <p><strong>Credits:</strong> ${course.credit}</p>
+        `;
+  
+        // Add card to grid
+        gridContainer.appendChild(courseCard);
+      });
+    } catch (error) {
+      console.error("Error fetching course data:", error);
     }
-
-    fetch("courses.json") // Ensure this file is in the correct path
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Failed to load courses.json");
-            }
-            return response.json();
-        })
-        .then(data => {
-            container.innerHTML = "<h3>Subjects Taken</h3>";
-            data.courses.forEach(course => {
-                let courseElement = document.createElement("p");
-                courseElement.textContent = `${course.year_level} Year, ${course.sem} Sem - ${course.code}: ${course.description} (${course.credit} Credits)`;
-                container.appendChild(courseElement);
-            });
-        })
-        .catch(error => console.error("Error loading JSON:", error));
-});
-
+  }
+  
+  // Load and display courses
+  fetchAndDisplayCourses();
+  

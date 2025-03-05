@@ -1,130 +1,32 @@
-body { 
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
   margin: 0;
+  padding: 20px;
 }
 
-
-
-/* Center the entire content */
-.container {
-  width: 80%;
-  max-width: 800px;
-  margin: auto;
+#courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 20px;
   padding: 20px;
-  background: #fff;
+}
+
+.course-card {
+  background-color: #3C6E71;
+  color: white;
+  padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centers text inside container */
-}
-
-/* Header */
-header {
-  background: #3C6E71;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px 10px 0 0;
-}
-
-header h1 {
-  margin: 0;
-}
-
-/* Navigation */
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline-block;
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 12px;
-  transition: 0.3s;
-}
-
-nav ul li a:hover {
-  background: #2a4d4e;
-  border-radius: 5px;
-}
-
-/* Profile Section */
-.profile {
-  text-align: center;
-  padding: 20px;
-}
-
-.profile-img {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border: 4px solid #3C6E71;
-}
-
-.profile-name {
-  font-size: 24px;
-  color: #3C6E71;
-}
-
-/* Sections */
-section {
-  background: white;
-  padding: 20px;
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-/* Skills List */
-.skills-list {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+.course-card h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
 }
 
-.skills-list li {
-  background: #3C6E71;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 5px;
+.course-card p {
+  margin: 5px 0;
   font-size: 14px;
-}
-
-footer {
-  background: #3C6E71;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px 10px 0 0;
-}
-
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-      width: 90%;
-      padding: 15px;
-  }
-
-  nav ul {
-      text-align: center;
-  }
-
-  nav ul li {
-      display: block;
-      margin: 10px 0;
-  }
 }

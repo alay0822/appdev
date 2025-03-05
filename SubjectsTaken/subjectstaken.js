@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    fetch("courses.json") // Ensure this file is in the correct path
+    fetch("courses.json")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Failed to load courses.json");
@@ -14,11 +14,40 @@ document.addEventListener("DOMContentLoaded", function () {
             return response.json();
         })
         .then(data => {
-            container.innerHTML = "<h3>Subjects Taken</h3>";
+            const groupedCourses = {};
+
+            // Group courses by year level and semester
             data.courses.forEach(course => {
-                let courseElement = document.createElement("p");
-                courseElement.textContent = `${course.year_level} Year, ${course.sem} Sem - ${course.code}: ${course.description} (${course.credit} Credits)`;
-                container.appendChild(courseElement);
+                let key = `${course.year_level} - ${course.sem}`;
+                if (!groupedCourses[key]) {
+                    groupedCourses[key] = [];
+                }
+                groupedCourses[key].push(course);
+            });
+
+            container.innerHTML = "<h3>Subjects Taken</h3>";
+
+            // Create course grids
+            Object.keys(groupedCourses).forEach(key => {
+                let section = document.createElement("div");
+                section.classList.add("course-section");
+
+                let header = document.createElement("h4");
+                header.textContent = key;
+                section.appendChild(header);
+
+                let grid = document.createElement("div");
+                grid.classList.add("course-grid");
+
+                groupedCourses[key].forEach(course => {
+                    let courseElement = document.createElement("div");
+                    courseElement.classList.add("course-card");
+                    courseElement.innerHTML = `<strong>${course.code}</strong><br>${course.description}<br>(${course.credit} Credits)`;
+                    grid.appendChild(courseElement);
+                });
+
+                section.appendChild(grid);
+                container.appendChild(section);
             });
         })
         .catch(error => console.error("Error loading JSON:", error));

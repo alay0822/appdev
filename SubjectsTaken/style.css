@@ -1,5 +1,5 @@
-/* Style for the entire courses section */
-body { 
+/* Reset & General Styles */
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -7,6 +7,8 @@ body {
 }
 
 
+
+/* Center the entire content */
 .container {
   width: 80%;
   max-width: 800px;
@@ -16,45 +18,6 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center; /* Centers text inside container */
-}
-
-
-#courses {
-  text-align: center;
-}
-
-.course-group {
-  background: #f8f9fa;
-  padding: 15px;
-  margin: 15px 0;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.course-group h4 {
-  color: #3C6E71;
-  margin-bottom: 10px;
-}
-
-/* Grid container for courses */
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-}
-
-/* Individual course cards */
-.course-card {
-  background: white;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.2s ease-in-out;
-}
-
-.course-card:hover {
-  transform: scale(1.05);
 }
 
 /* Header */
@@ -142,16 +105,49 @@ section {
 }
 
 footer {
-  background: #3C6E71;
-  color: white;
-  padding: 20px;
   text-align: center;
-  border-radius: 10px 10px 0 0;
+  width: 100%;
+  padding: 0px 0; 
+  font-size: 14px; 
+  background: #3C6E71;
 }
 
-/* Responsive layout */
-@media (max-width: 600px) {
-  .course-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      width: 90%;
+      padding: 15px;
   }
-}
+
+  nav ul {
+      text-align: center;
+  }
+
+  nav ul li {
+      display: block;
+      margin: 10px 0;
+  }
+  #search-bar {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 2px solid #3C6E71;
+      border-radius: 5px;
+      font-size: 16px;
+      outline: none;
+    }
+    
+    #search-bar:focus {
+      border-color: #2a4d4e;
+      box-shadow: 0 0 5px rgba(60, 110, 113, 0.5);
+    }
+    
+    #courses-container p {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+    
+  }

@@ -104,15 +104,12 @@ html, body {
 }
 
 footer {
-  background: #3C6E71;  /* Match header color */
-  color: white;
-  padding: 10px 0;
   text-align: center;
-  width: 50%;
-  position: relative;
-  bottom: 0;
+  padding: 10px;
+  background-color: #f1f1f1; /* Optional: Add a background color */
+  font-size: 14px; /* Adjust font size if needed */
+  color: #333; /* Choose a font color that matches your theme */
 }
-
 .footer-container {
   max-width: 900px; /* Match header width */
   margin: 0 auto; /* Center align */

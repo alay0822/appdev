@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () { 
+document.addEventListener("DOMContentLoaded", function () {
     let container = document.getElementById("courses-container");
 
     if (!container) {
@@ -14,41 +14,45 @@ document.addEventListener("DOMContentLoaded", function () {
             return response.json();
         })
         .then(data => {
-            const groupedCourses = {};
+            container.innerHTML = "<h3>Subjects Taken</h3>";
+
+            let groupedCourses = {};
 
             // Group courses by year level and semester
             data.courses.forEach(course => {
-                let key = `${course.year_level} - ${course.sem}`;
+                let key = `${course.year_level} Year - ${course.sem} Sem`;
                 if (!groupedCourses[key]) {
                     groupedCourses[key] = [];
                 }
                 groupedCourses[key].push(course);
             });
 
-            container.innerHTML = "<h3>Subjects Taken</h3>";
-
-            // Create course grids
-            Object.keys(groupedCourses).forEach(key => {
+            // Create grid layout
+            for (let group in groupedCourses) {
                 let section = document.createElement("div");
-                section.classList.add("course-section");
+                section.classList.add("course-group");
 
-                let header = document.createElement("h4");
-                header.textContent = key;
-                section.appendChild(header);
+                let title = document.createElement("h4");
+                title.textContent = group;
+                section.appendChild(title);
 
-                let grid = document.createElement("div");
-                grid.classList.add("course-grid");
+                let courseGrid = document.createElement("div");
+                courseGrid.classList.add("course-grid");
 
-                groupedCourses[key].forEach(course => {
-                    let courseElement = document.createElement("div");
-                    courseElement.classList.add("course-card");
-                    courseElement.innerHTML = `<strong>${course.code}</strong><br>${course.description}<br>(${course.credit} Credits)`;
-                    grid.appendChild(courseElement);
+                groupedCourses[group].forEach(course => {
+                    let courseCard = document.createElement("div");
+                    courseCard.classList.add("course-card");
+                    courseCard.innerHTML = `
+                        <strong>${course.code}</strong><br>
+                        ${course.description}<br>
+                        <small>${course.credit} Credits</small>
+                    `;
+                    courseGrid.appendChild(courseCard);
                 });
 
-                section.appendChild(grid);
+                section.appendChild(courseGrid);
                 container.appendChild(section);
-            });
+            }
         })
         .catch(error => console.error("Error loading JSON:", error));
 });

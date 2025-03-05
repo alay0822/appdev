@@ -1,5 +1,4 @@
-/* Reset & General Styles */
-body {
+body { 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -105,11 +104,11 @@ section {
 }
 
 footer {
-  text-align: center;
-  width: 100%;
-  padding: 0px 0; 
-  font-size: 14px; 
   background: #3C6E71;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
 }
 
 
@@ -128,26 +127,4 @@ footer {
       display: block;
       margin: 10px 0;
   }
-  #search-bar {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 2px solid #3C6E71;
-      border-radius: 5px;
-      font-size: 16px;
-      outline: none;
-    }
-    
-    #search-bar:focus {
-      border-color: #2a4d4e;
-      box-shadow: 0 0 5px rgba(60, 110, 113, 0.5);
-    }
-    
-    #courses-container p {
-      background: #f4f4f4;
-      padding: 10px;
-      border-radius: 5px;
-      margin-bottom: 5px;
-    }
-    
-  }
+}

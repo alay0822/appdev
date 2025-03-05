@@ -1,31 +1,86 @@
-body {
+/* General Styling */
+body { 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  margin: 0;
-  padding: 20px;
 }
 
-#grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-  gap: 20px;
+/* Container */
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: auto;
   padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.course-card {
+/* Header */
+header {
   background: #3C6E71;
   color: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
 }
 
-.course-card h3 {
-  margin: 0 0 10px;
+header h1 {
+  margin: 0;
+}
+
+/* Course List */
+.course-container {
+  text-align: left;
+}
+
+/* Semester Section */
+.semester {
+  margin: 20px 0;
+  padding-bottom: 15px;
+  border-bottom: 2px dashed #3C6E71; /* Softer separation */
+}
+
+.semester h2 {
   font-size: 18px;
+  color: #3C6E71;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #3C6E71;
 }
 
-.course-card p {
+/* Course Item */
+.course {
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
   margin: 5px 0;
+  border: 1px solid #ddd; /* Light border for subtle separation */
+}
+
+.course:nth-child(odd) {
+  background: #f0f7f8; /* Soft alternate background */
+}
+
+.course span {
   font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .course {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

@@ -1,31 +1,34 @@
-async function loadCourses() {
-    try {
-      // Fetch courses from JSON file
-      const response = await fetch("courses.json");
-      const data = await response.json();
-  
-      // Get the container element
-      const gridContainer = document.getElementById("grid-container");
-  
-      // Generate grid items for each course
-      data.courses.forEach(course => {
-        const courseCard = document.createElement("div");
-        courseCard.className = "course-card";
-  
-        courseCard.innerHTML = `
-          <h3>${course.code} - ${course.description}</h3>
-          <p><strong>Year Level:</strong> ${course.year_level}</p>
-          <p><strong>Semester:</strong> ${course.sem}</p>
-          <p><strong>Credits:</strong> ${course.credit}</p>
-        `;
-  
-        gridContainer.appendChild(courseCard);
-      });
-    } catch (error) {
-      console.error("Error fetching courses:", error);
+document.addEventListener("DOMContentLoaded", function () {
+    const coursesContainer = document.getElementById("courses-container");
+    const searchBar = document.getElementById("search-bar");
+
+    fetch("courses.json")
+        .then(response => response.json())
+        .then(data => {
+            let courses = data.courses;
+            displayCourses(courses);
+
+            // ✅ Fix: Ensure search works dynamically
+            searchBar.addEventListener("input", function () {
+                let searchTerm = searchBar.value.toLowerCase();
+                let filteredCourses = courses.filter(course =>
+                    course.description.toLowerCase().includes(searchTerm) ||
+                    course.code.toLowerCase().includes(searchTerm)
+                );
+                displayCourses(filteredCourses);
+            });
+        });
+
+    function displayCourses(courses) {
+        coursesContainer.innerHTML = ""; // Clear previous results
+        if (courses.length === 0) {
+            coursesContainer.innerHTML = "<p>No results found</p>";
+            return;
+        }
+        courses.forEach(course => {
+            let courseElement = document.createElement("p");
+            courseElement.textContent = `${course.year_level} Year, ${course.sem} Sem - ${course.code}: ${course.description} (${course.credit} credits)`;
+            coursesContainer.appendChild(courseElement);
+        });
     }
-  }
-  
-  // Call the function to load courses
-  loadCourses();
-  
+});
